@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="home.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <title>Adventure</title>
+</head>
+<body>
+    <nav class='navbar'>
+        <img src="C:\Users\MYPC\Desktop\Adventure\LocalRepo\ProjectImg\Abstract Mountain Logo.png" class='logo'/>
+        <p id="logo-name">ADVENTURE</p>
+        <div  class='menu-items' style="display: flex;align-items: center;padding-right: 100px;">
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./places.html">Places</a></li>
+        <li><a href="./login.html">Login</a></li>
+          <li><a href="./profile.html"><p id="user"></p></a></li>
+        </div>
+    </nav>
+      <div class='hero'  id="section1">
+        <h2>Explore The World</h2><br>
+        <p id='hero-dilog'>Adventure gives you physical exertion, building self confidence, and experience new cultures.Being in love is about exploring,learning, trusting and building each otherup.Adventure is play very important role in our life.This U.I. gives you many destinition under India in low cost visit.</p>
+        <div class="hero-container" id="heroContainer"></div>
+      <div class='dark'></div>
+      </div>
+
+      <div class='container'>
+        <div class='cart'>
+           <button  id="backbtn"> <a href="/home.html">Back- <a href="home.html"></a></button></a>
+            <div class='sign-in-part'>
+                <div class='details'>
+                    <h1>Hello User</h1>
+                    <br><p id='login-dilog'>Fill the all recuire user informaton.we secure your informations and protect,</p>
+                   <br><a class='shift' href="E:\minor-project\minor2\Component\login.html">Sign-in</a>
+                </div>
+                <form id="authForm" class="form" >
+                    <h1>Sign-up</h1>
+                    <label for='name'>Username</label>
+                    <input id="username" type='text' placeholder='Enter Username' name="name" required/>
+                    <label for='email'>User-email</label>
+                    <input type='email' placeholder='Enter email' id="email" name="email" required/>
+                    <label for='password'>password</label>
+                    <input type='password' placeholder='Enter password' id="password" name="password" required/>
+                    <button type="submit" id="sbmt" class="sbmtButton">Submit</button>
+                    <a href="./randomImage.html" id="redirectLink " class="enterbtn">Enter<i class="fa-solid fa-right-to-bracket"></i></a>  
+                  </form>
+            </div>
+            </div>  
+            
+    </div>
+        
+      </div>
+      </div>
+    </div>
+    <a href="#section1" id="scrollbtn"><i class="fa-solid fa-arrow-up-from-bracket fa-bounce"></i></a>
+    <div class="footer">
+      
+      <div class="futer-text">
+        <h3>HELP</h3>
+          <p>FAQ</p>
+          <p>Report</p>
+          <p>Feedback</p>
+          <p>User_Policy</p>
+      </div>
+      <div class="footer-logo">
+        <span id="letter">A</span>
+        <img src="C:\Users\MYPC\Desktop\Adventure\LocalRepo\ProjectImg\wing.webp" id="wing">
+        <img src="C:\Users\MYPC\Desktop\Adventure\LocalRepo\ProjectImg\axx2722k.png" id="domain-name">
+      </div>
+      <div class="futer-text">
+        <h3>CONTACT</h3>
+          <p>About</p>
+          <p>Query</p>
+          <p>Feedback</p>
+          <p>Contact</p>
+      </div>
+      <div class="futer-icons">
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.google.com/search?q=%40deepaksen1568&rlz=1C1JJTC_enIN1105IN1105&oq=%40deepaksen1568&aqs=chrome..69i57.13016j0j7&sourceid=chrome&ie=UTF-8"><i class="fa-brands fa-youtube"></i></a>
+        <a href=""><i class="fa-brands fa-square-whatsapp"></i></a>
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+     
+      <script>
+    // Hero section functionality
+
+    function getRandomNaturePhotos() {
+      const accessKey = 'AaBtrIwydbZ0MEKamiIFSTk3KT5eJJhSd6naYwiD4sc'; // Replace 'YOUR_UNSPLASH_ACCESS_KEY' with your Unsplash API access key
+      const searchQuery = 'nature'; // Search query for nature images
+
+      axios.get('https://api.unsplash.com/photos/random', {
+          params: {
+              client_id: accessKey,
+              query: searchQuery,
+              count: 5 // Display only 5 images
+          }
+      })
+      .then(response => {
+          const randomPhotos = response.data;
+          const heroContainer = document.getElementById('heroContainer');
+          let index = 0;
+
+          // Display each nature image with animation
+          randomPhotos.forEach(photo => {
+              const photoUrl = photo.urls.regular;
+              const img = new Image();
+              img.src = photoUrl;
+              img.classList.add('hero-image');
+              img.style.animationDelay = `${index * 6}s`; // Delay each image animation
+              heroContainer.appendChild(img);
+              index++;
+          });
+      })
+      .catch(error => {
+          console.error('Error fetching random photos:', error);
+      });
+  }
+
+  // Call the function to fetch random nature photos when the page loads
+  window.onload = () => {
+      getRandomNaturePhotos(); // Load nature photos on page load
+  };
+
+
+    document.getElementById('authForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+    
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("password").value;
+    
+    
+    if (username === "") {
+    alert("Name must be filled out");
+    } else if (email === "") {
+    alert("Email must be filled out");
+    } else if (pass === "") {
+    alert("Password must be filled out");
+    } else if (!validateEmail(email)) {
+    alert("Please enter a valid email address");
+    } else if (!email.endsWith("@gmail.com")) {
+    alert("Email must end with @gmail.com");
+    } else if (pass.length < 6) {
+    alert("Password must be at least 6 characters long");
+    } else {
+    // Form is valid
+    alert("Form submitted successfully!");
+let enterButton = document.querySelector(".enterbtn");
+enterButton.style="display:block;transform:translateX(-280px); transition: transform .5s linear;";
+let sbmt = document.querySelector(".sbmtButton");
+sbmt.style="display:none";   
+let userProName = document.getElementById("user");
+     userProName.innerHTML=`<i class="fa-solid fa-user"></i>`+username;
+
+     document.getElementById("username").value="";
+   document.getElementById("email").value="";
+    document.getElementById("password").value="";
+    // Show the enter button
+     
+    enterButton.onclick = function() {
+    window.location.href = 'E:\minor-project\minor2\Component\randomImage.html'; // Update with your desired path
+    }
+    ;
+    }
+    
+    function validateEmail(email) {
+    var emailPattern = /^[^\s@]+@gmail\.com$/;
+    return emailPattern.test(email);
+    }
+    
+    });   
+      </script>
+</body>
+</html>
