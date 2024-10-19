@@ -1,0 +1,37 @@
+.about-container{
+    width: 100%;
+    height: 10%;
+    background: #fff6f6;
+}
+.user-review h1{
+    color: wheat;
+    text-align: center;
+    background: rgba(0,0,0,.4);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.user-review p{
+    font-family: Arial;
+    font-size: 23px;
+    color: rgb(59, 59, 59);
+}
+h3{
+    font-family:Helvetica;
+    font-size: 18px;
+    font-weight: 300;
+
+}
+#backbtn{
+    width: 55px;
+    height: 25px;
+    color: #f0ebeb;
+    font-size: 17px;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    text-align: end;
+    padding-right: 15px;
+    border: 2px solid #08747c;
+    background: rgb(8, 139, 139);
+    border-radius: 15px;
+    text-decoration: none;
+}

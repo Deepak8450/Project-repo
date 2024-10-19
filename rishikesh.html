@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rishikesh.css">
+    <title>Rishikesh</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome In Rishikesh:Tourism</h1>
+        <button id="backbtn" onclick="back()">Back-</button>
+        <div class="places-box">
+            <div class="longimg">
+                <img src="" alt="" id="long-Img">
+                <h3 id="resto-info">Rishikesh has numerous ashrams, some of which are internationally recognised as centres of
+                    philosophical sudies,yoga and other ancient Indian traditions of wellness. Talk about here restorts
+                    here ,So here resorts are available in low cost starting from ₹2,682 pwer person .Taj Corbett
+                    Resorts &spa, Uttrakhand ."Excellent Stay,Service Hospitality and food had the best experience of
+                    luxury and the hotel staff was amazing specially the housekeeping staff are too good .</h3>
+            </div>
+            <div class="shortimg">
+                <p id="suggest-dilog">Here, some pictures of resorts of rishikesh suggesting for you.</p>
+                <img src="E:\minor-project\minor2\hoa.avif" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\aloha.jpg" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\resorts1.jpg" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\resorts3.png" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\taj-resorts.jpg" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\rishikesh3.jpg" alt="" id="short-img" onclick="showing(this)">
+            </div>
+        </div>
+       
+        <button id="food-btn" onclick="showFood()">Famous Food of Rishikesh-</button>
+        <div class="food-container">
+
+          <div class="food-dilog">
+           <h2>Delicious Food Of Rishikesh.</h2><br><p>We provide famous food of Rishikesh in low cost ,So delicious food amd very famous in the shimla</p> 
+          </div>  
+           <div class="food-box">
+            <img src="E:\minor-project\minor2\rishifood1.jpg" alt="" id="food-img" class="img1">
+            <img src="E:\minor-project\minor2\rishifood2.jpg" alt="" id="food-img" class="img2">
+            <img src="E:\minor-project\minor2\rishifood3.jpg" alt="" id="food-img" class="img3">
+            <img src="E:\minor-project\minor2\rishifood4.jpg" alt="" id="food-img" class="img4">
+            <img src="E:\minor-project\minor2\rishifood5.jpg" alt="" id="food-img" class="img5">
+            <img src="E:\minor-project\minor2\rishifood6.jpg" alt="" id="food-img" class="img6">
+
+           </div>
+        </div>
+
+    </div>
+    <div class="trip-form">
+        <div class="user-info-part">
+            <h3 id="Trip-hadline">Trip Booking Form</h3>
+            <label for="name">Username</label>
+            <input type="text" placeholder="Enter Full_Name" id="uname">
+            <label for="email">Email/address</label>
+            <input type="text" placeholder="Enter email" id="uemail">
+            <label for="Number">Mobile Number</label>
+            <input type="text" placeholder="Mobile Number" id="unumber">
+            <label for="Number">Add Cash</label>
+            <input type="text" placeholder="Minimum Cash ₹10,000" id="amount">
+
+            <button id="submtbtn" onclick="submit()">Submit</button>
+        </div>
+        <div class="right-part">
+            <img src="E:\minor-project\minor2\Contact-Us.webp" id="right-img">
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+         <span class="close">&times;</span>
+         <h1 id="alertMessage">Trip Booking Successfully.</h1><br><p id="money"></p>
+        </div>
+     </div>
+    <script>
+        function back(){
+          window.location.href='/Component/places.html';
+        }
+       
+        function showing(show) {
+            let fullImg = document.getElementById("long-Img");
+            fullImg.src = show.src;
+            fullImg.style.visibility = "visible"
+            document.getElementById("resto-info").style.visibility = "visible";
+            document.getElementById("food-btn").style.visibility = "visible";
+        }
+        function showFood(){
+            document.querySelector(".food-container").style.visibility="visible";
+         }
+
+        var modal= document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      function showAlert(message){
+        document.getElementById("alertMessage").innerText= message;
+      let popup= document.getElementById("myModal").style="visibility:visible;";
+      } 
+      span.onclick = function(){
+        modal.style.display="none";
+      }
+       window.onclick = function(event){
+        if(event.target == modal){
+          modal.style.display="none";
+        }
+       }
+
+      function submit(){
+        let name = document.getElementById("uname").value;
+        let uemail=document.getElementById("uemail").value;
+       let unumber= document.getElementById("unumber").value;
+      const amount=document.getElementById("amount").value;
+        if(!(amount || name || uemail || unumber)){
+           alert("All field must full fill correctly.");
+        }
+        else{
+          document.getElementById("money").innerHTML="& Your initial amount:"+amount;
+          document.getElementById("myModal").style="transform:scale(1.1);";
+          document.getElementById("uname").value='';
+          document.getElementById("uemail").value='';
+        document.getElementById("unumber").value='';
+        }
+        
+      }
+    </script>
+</body>
+
+</html>

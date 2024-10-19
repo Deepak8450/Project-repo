@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shimla.css">
+    <title>Shimla</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Wellcome In Shimla:Tourism</h1>
+        <button id="backbtn" onclick="back()">Back-</button>
+        <div class="places-box">
+            <div class="longimg">
+                <img src="" alt="" id="long-Img">
+                <h3 id="resto-info">Shimla is the capital city of the northern India state of Himachal Pradesh. The city
+                    is up in the mountains at around 2,200 metres( approximately 7,234 feet).<br><b>Shimla</b> is a
+                    popular tourist destinition in India.In 1864, Shimla was made the summer capital of British
+                    India.<b>Shimla is popularly known as the Queen of hills.</b>Shimla is often covered along with
+                    nearby towns of Kufri, a hill-station almost always covered by snow and Chail,famous for huge palace
+                    and the highest cricket ground in the world.This beautiful hill station is built on seven different
+                    hills namely <b>Inveram hill,Bantony hill,Elysium hill,Observatory hills,prospect hill,summer hill
+                        and Jakhu hill.</b></h3>
+            </div>
+            <div class="shortimg">
+                <p id="suggest-dilog">Here, some pictures of resorts of shimla suggesting for you.</p>
+                <img src="E:\minor-project\minor2\simla1.jpg" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\simla2.jpg" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\simla3.jpg" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\simla4.jpg" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\simla5.jpg" alt="" id="short-img" onclick="showing(this)">
+                <img src="E:\minor-project\minor2\simla6.jpg" alt="" id="short-img" onclick="showing(this)">
+            </div>
+        </div>
+        <button id="food-btn" onclick="showFood()">Famous Food of Shimla-</button>
+        <div class="food-container">
+
+          <div class="food-dilog">
+           <h2>Delicious Food Of Shimla.</h2><br><p>We provide famous food of Shimla in low cost ,So delicious food amd very famous in the shimla</p> 
+          </div>  
+           <div class="food-box">
+            <img src="E:\minor-project\minor2\shimla food1.jpg" alt="" id="food-img" class="img1">
+            <img src="E:\minor-project\minor2\simlafood2.jpg" alt="" id="food-img" class="img2">
+            <img src="E:\minor-project\minor2\simlafoos3.jpg" alt="" id="food-img" class="img3">
+            <img src="E:\minor-project\minor2\simlafood4.jpg
+            " alt="" id="food-img" class="img4">
+           </div>
+        </div>
+    </div>
+    <div class="trip-form">
+        <div class="user-info-part">
+            <h3 id="Trip-hadline">Trip Booking Form</h3>
+            <label for="name">Username</label>
+            <input type="text" placeholder="Enter Full_Name" id="uname">
+            <label for="email">Email/address</label>
+            <input type="text" placeholder="Enter email" id="uemail">
+            <label for="Number">Mobile Number</label>
+            <input type="text" placeholder="Mobile Number" id="unumber">
+            <label for="Number">Add Cash</label>
+            <input type="text" placeholder="Minimum Cash ₹10,000" id="amount">
+
+            <button id="submtbtn" onclick="submit()">Submit</button>
+        </div>
+        <div class="right-part">
+            <img src="/Contact-Us.webp" id="right-img">
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 id="alertMessage">Trip Booking Successfully.</h1><br>
+            <p id="money"></p>
+        </div>
+    </div>
+    <script>
+        function back() {
+            window.location.href = '/Component/places.html';
+        }
+
+        function showing(show) {
+            let fullImg = document.getElementById("long-Img");
+            fullImg.src = show.src;
+            fullImg.style.visibility = "visible";
+            document.getElementById("resto-info").style.visibility = "visible";
+            document.getElementById("food-btn").style.visibility = "visible";
+        }
+         function showFood(){
+            document.querySelector(".food-container").style.visibility="visible";
+         }
+
+
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+        function showAlert(message) {
+            document.getElementById("alertMessage").innerText = message;
+            let popup = document.getElementById("myModal").style = "visibility:visible;";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function submit() {
+            let name = document.getElementById("uname").value;
+            let uemail = document.getElementById("uemail").value;
+            let unumber = document.getElementById("unumber").value;
+            const amount = document.getElementById("amount").value;
+            if (!(amount || name || uemail || unumber)) {
+                alert("All field must full fill correctly.");
+            }
+            else {
+                document.getElementById("money").innerHTML = "& Your initial amount:" + amount;
+                document.getElementById("myModal").style = "transform:scale(1.1);";
+                document.getElementById("uname").value = '';
+                document.getElementById("uemail").value = '';
+                document.getElementById("unumber").value = '';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

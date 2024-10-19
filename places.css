@@ -1,0 +1,269 @@
+h1{
+    font-family: sans-serif;
+    color: antiquewhite;
+    padding-left:200px;
+    user-select: none;
+    position:fixed;
+    top: -15px;
+    width: 100%;
+    z-index: 1;
+    background: rgba(0,0,0,.6);
+}
+#backbtn{
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    text-decoration: none;
+    width: 50px;
+    height: 20px;
+    border-radius: 50px;
+    text-align: center;
+    background: rgb(0, 138, 108);
+    color: rgb(251, 251, 251);
+    padding: 2px 1px;
+    font-family:fantasy;
+    border:1px solid cyan ;
+    z-index: 1;
+}
+.cards{
+    width: 100%;
+    height:690px;
+    position: absolute;
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: -1;
+}
+.card{
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    background:#fff;
+    border-radius: 5px;
+    margin-left: 50px;
+    box-shadow: 4px 4px 5px gray;
+}
+.card:hover{
+    width: 250px;
+    height: 300px;
+    transform: scale(1.1);
+    transition-property: width 1s linear;
+    transition-duration: 1s;
+}
+.card-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    height: 180px;
+    user-select: none;
+}
+.card-img{
+    width: 250px;
+    height: 130px;
+    background-size: cover;
+    user-select: none;
+    background-repeat: no-repeat;
+}
+#card-btn{
+    width: 100px;
+    height: 30px;
+    position: relative;
+    font-weight: 500;
+    font-family:fantasy;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 1px solid rgb(3, 127, 113);
+    color: rgb(5, 150, 136);
+}
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(114, 114, 114);
+    margin-top:-2px;
+}
+#domain{
+    color: #eee;
+    background: rgba(0,0,0,.5);
+    padding-left: 406px;
+    word-spacing: 10px;
+    position: relative;
+    top: -193px;
+    
+}
+.information_nepal{
+    width: 80%;
+    padding-left: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#bckbtn{
+    width: 60px;
+    height: 20px;
+    border-radius: 20px;
+    position: fixed;
+    top: 80px;
+    right: 135px;
+    font-family:fantasy;
+    border: 1px solid cyan;
+    background: rgb(0, 138, 108);
+}
+#bckbtn a{
+    color: #eee;
+    font-size: 12px;
+    text-decoration: none;
+}
+.nepalbooking{
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 60px;
+    z-index: 4;
+    transform: scale(0.001); 
+    background: linear-gradient(to right, #fff,#eee,rgb(129, 236, 255));
+}
+.sort-img-box{
+    width: 80%;
+    height: 150px;
+    margin-top: 100px;
+    display: flex;
+    visibility: hidden;
+    justify-content: space-around;
+}
+.sort-img{
+    margin-top:50px;
+}
+.trip-form{
+    width: 60%;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    box-shadow: -4px -3px 5px gray;
+}
+#Trip-hadline{
+    margin-left: 30px;
+    color: blueviolet;
+}
+.user-info-part{
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:60px 20px;
+}
+.user-info-part input{
+    width: 230px;
+    height: 30px;
+    outline: none;
+    border-top: none;border-left: none;border-right: none;
+    margin-bottom: 10px;
+}
+#submtbtn{
+    width: 130px;
+    height: 30px;
+    color: #eee;
+    margin: 40px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid rgb(189, 119, 255);
+    background: blueviolet;
+}
+label{
+    font-family: sans-serif;
+    font-size: 15px;
+}
+.right-part{
+    width:600px;
+    height: 500px;
+    position: absolute;
+    right: 0px;
+    background: #eee;
+    
+}
+#right-img{
+    width: 600px;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.discount{
+    width: 245px;
+    height: 90px;
+    position: relative;
+    top: -20px;
+    padding-left: 15px;
+    background: #f7f7f7;
+}
+.discount #price{
+color: crimson;
+font-size: 14px;
+font-family:fantasy;
+
+}
+.discount del{
+    font-family:fantasy;
+    color: rgb(173, 172, 172);
+}
+#descount{
+    font-family:fantasy;
+    font-weight: 100;
+    color: #666666;
+    padding-left: 13px;
+} 
+/* destinition generate img design*/
+.destination-img{
+    width: 500px;
+    height: 300px;
+    position: relative;
+    left: 40%;
+}
+#longImg{
+    width: 500px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.modal{
+    display: block;
+    position: fixed;
+    top: 35%;
+    right: 80px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.001);
+    background: rgba(0,0,0,.3);
+}
+#alertMessage{
+    color: wheat;
+    padding: 31px 70px;
+}
+#money{
+    color: wheat;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+}
+.modal-content{
+    background: #fefefe;
+    border: 1px solid #888;
+    width: 50%;
+    height: 120px;
+    position: relative;
+    top: 10%;
+    left: 30%;
+}
+.close{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
