@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
   <link rel="stylesheet" href="./login.css">
     <title>Sign-in</title>
 </head>
 <body>
+    <p id="msg1">Login Successfully..!</p>
+    <p id="msg2">Invalid username or password..</p>
     <div class='container'>
         <div class='cart'>
            <button id="backbtn"> <a href="./home.html">Back- <a href="home.html"></a></button></a>
@@ -18,12 +21,11 @@
                 </div>
                 <form>
                     <h1>Sign-in</h1>
-                    
-                    <label htmlFor='email'>User-email</label>
-                    <input type='text' placeholder='Enter email' />
+                    <label htmlFor='name'>User-name</label>
+                    <input type="text" id="username" placeholder="Username">
                     <label htmlFor='password'>password</label>
-                    <input type='password' placeholder='Enter password' />
-                    <button>Sign-in</button>
+                    <input type="password" id="password" placeholder="Password">
+                    <button onclick="login()">Login</button>
                 </form>
             </div>
             </div>
@@ -31,5 +33,28 @@
             
     </div>
     
+    <script>
+        const msg1 = document.getElementById("msg1");
+        const msg2 = document.getElementById("msg2");
+        function login() {
+            const userName = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Fetch userData from localStorage
+            const storedUserData = JSON.parse(localStorage.getItem('userData'));
+
+            if (storedUserData) {
+                if (storedUserData.name === userName && storedUserData.password === password) {
+                   msg1.style.display="block";
+                    window.location.href = 'home.html';  // Redirect to home page
+                } else {
+                    msg2.style.display="block";
+                }
+            } else {
+                alert("No user data found! Make sure you have registered.");
+            }
+        }
+    </script>
+     
 </body>
 </html>
