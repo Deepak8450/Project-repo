@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: orange;
+}
+.Project{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.project-container{
+    width: 100%;
+    height:500px;
+    display: flex;
+    align-items: center;
+}
+.projectImg{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: fit-content;
+}
+.project-description{
+    width: 400px;
+    text-align: left;
+    padding-left: 10px;
+}
+.project-description p{
+    color: #eee;
+    line-height: 30px;
+}
+.project-description p a{
+    text-decoration: none;
+    color: orange;
+    padding: 5px 20px 5px 20px;
+    border-radius: 20px;
+    border: 1px solid orange;
+    background: rgba(107, 104, 104, 0.2);
+}
+@media only screen and (max-width: 660px) {
+    .project-container{
+        flex-direction: column;
+        margin-left: 200px;
+    }   
+}
